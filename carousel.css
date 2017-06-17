@@ -1,0 +1,132 @@
+/* container */
+.carousel {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* item */
+.carousel_item {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: translateX(0);
+    backface-visibility: hidden;
+    will-change: transform;
+    display: none;
+}
+.carousel_item.next,
+.carousel_item.active {
+    display: block;
+}
+.carousel_item.next {
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+}
+
+.carousel_item.left,
+.carousel_item.active.left {
+    transform: translateX(-100%);
+}
+.carousel_item.right,
+.carousel_item.active.right {
+    transform: translateX(100%)
+}
+
+/* content */
+.carousel_link {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+.carousel_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+.carousel_slide_title {
+    font-size: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    max-width: 70%;
+    color: #777;
+}
+.carousel_slide_title span {
+    display: block;
+    font-size: 14px;
+    color: #ccc;
+}
+.carousel_slide_price {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* arrows */
+.carousel_arrow {
+    position: absolute;
+    width: 50px;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+    padding-top: 200px;
+}
+.carousel_arrow:before {
+    content: '>';
+    display: block;
+    text-align: center;
+    line-height: 2em;
+    margin-top: -1em;
+}
+
+.carousel_arrow__prev {
+    left: 0;
+}
+.carousel_arrow__prev:before {
+    content: '<';
+}
+
+/* navigation */
+.carousel_navigation {
+    font-size: 0;
+    position: absolute;
+    bottom: 0;
+    margin: 10px auto;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    left: 0;
+    right: 0;
+}
+
+.carousel_navigation li {
+    display: inline-block;
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: rgba(0,0,0, .2);
+}
+
+.carousel_navigation .active {
+    background: rgba(0,0,0, .7);
+    cursor: default;
+}
