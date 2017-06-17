@@ -1,5 +1,3 @@
-// TODO; add namespace, add template params, add factory for multi selectors, add class names params
-
 // data loader
 function dataLoader(url, callback) {
   var xhr = new XMLHttpRequest();
